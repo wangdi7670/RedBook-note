@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    var color = "window color"
+
+    parent.color = "parent color"
+
+    function parent() {
+        return function child() {
+            console.log(this.color)
+        }
+    }
+
+
+    var obj = {
+        color: "obj color"
+    }
+
+    obj.f = parent()
+    obj.f()
+
+
+    arr = [1, 2, 3]
+    for (let i = 0; i < arr.length; i++) {
+        console.log("i = ", i)
+    }
+
+
+  </script>
+</body>
+</html>

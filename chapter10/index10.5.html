@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+        /**
+         * 在严格模式下，argument和传入的参数互不干扰
+         */ 
+        function make(name) {
+
+
+            // arguments[0] = '王迪'
+            name = '悟空'
+            console.log('args[0]: ', arguments[0])
+            console.log('name: ', name)
+        }
+
+        make('Wingd')
+    </script>
+</body>
+</html>

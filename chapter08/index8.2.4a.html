@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+测试红宝书中的实例代码，8.2.4节
+-->
+<body>
+  <script type="text/javascript">
+    function Person() {}
+    console.log(typeof Person)
+    console.log(Person instanceof Function)
+    console.log(Person instanceof Object)
+
+    Person.prototype.country = 'China'
+    Person.prototype.job = 'student'
+    console.log(Person.prototype)
+    let p = new Person()
+
+    // console.log(hasPrototypeProperty(p, name))
+
+    let arr = Object.keys(Person.prototype)
+    console.log(arr)
+    console.log(typeof arr)
+
+    console.log('--------------------------------------')
+    // Object.getOwnPropertyNames() 不可枚举属性也可以返回
+    console.log(Object.getOwnPropertyNames(Person))
+    console.log(Object.getOwnPropertyNames(Person.prototype))
+
+    console.log(Person)
+
+    console.log(typeof Object)
+    console.log(typeof Function)
+
+    let f = new Function()
+    console.log(typeof  f)
+
+    let s = new String('asd')
+    console.log('s: ', s)
+    console.log(typeof  s)
+
+
+  </script>
+</body>
+</html>

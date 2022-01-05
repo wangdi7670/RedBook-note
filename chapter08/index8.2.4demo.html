@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+typeof 关键字
+-->
+<body>
+    <script>
+        let s = 'qwe'
+        let n = 4
+        console.log(typeof s)
+        console.log(typeof n)
+
+        let d = new Date()
+        console.log(typeof d)
+
+        function Person(name) {
+            this.name = name
+        }
+        console.log('typrof Person: ', typeof Person)
+
+        let p = new Person('Wingd')
+        console.log('p.type: ', typeof p)  // object
+
+        console.log('typeof Date: ', typeof Date)  // function
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+函数的prototype
+-->
+<body>
+    <script type="text/javascript">
+        function Person() {
+            console.log('Hello, world!')
+        }
+        console.log('typeof Person.prototype: ', typeof Person.prototype)
+        console.log('Person.prototype: ', Person.prototype)
+
+        console.log(Person.prototype.constructor)
+        console.log(Person.prototype.constructor === Person)  // true
+
+        let p = new Person()
+        console.log('isTrue? ', p.__proto__ === Person.prototype)  // true
+
+        console.log(typeof Array)
+
+        console.log(typeof Object)
+        let o = {};
+        console.log(typeof String)
+
+        let s = new String('qwe')
+        console.log(typeof s)
+
+        let  o1 = Object()
+
+        let date = new Date()
+        console.log(date)
+        console.log(typeof date)
+        console.log(typeof Function)
+
+        let fn = new Function()
+        console.log(typeof fn)
+
+        function fn1() {
+
+        }
+
+        console.log(fn1 instanceof Object)
+
+        let f1 = new fn1()
+        console.log(f1 instanceof fn1)  // true
+        console.log(f1 instanceof Function)
+        console.log(f1 instanceof Object)
+
+
+    </script>
+</body>
+</html>

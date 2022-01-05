@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this
+-->
+<body>
+  <script>
+    function King() {
+        this.name = 'k';
+
+        setTimeout(() => {
+            console.log(this.name)
+            console.log(this)
+        }, 1000)
+    }
+
+    // new King()
+    // King()
+
+    /*function Queen() {
+        this.name = 'q'
+
+       setTimeout(function () {
+           console.log(this.name)
+           console.log(this)
+       })
+    }
+
+    new Queen()*/
+
+
+
+    let a = {}
+    a.fun = () => {
+        // console.log(this.color);
+        console.log(this)
+    }
+
+   /* a.fun = function () {
+        console.log(this.color)
+    }*/
+
+    a.color = 'red'
+    a.fun()
+
+
+    console.log(typeof Object)
+  </script>
+</body>
+</html>
