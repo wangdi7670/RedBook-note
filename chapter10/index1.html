@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    var name = "window"
+
+    function King() {
+        // this.name = "James"
+
+        /*var f = () => {
+            console.log(this.name)
+        }*/
+
+        /*function f() {
+            console.log(this.name)
+        }*/
+
+        // f()
+
+        // return f
+
+        return function () {
+            console.log(this.name)
+        }
+    }
+
+    // new King()
+
+    // var res = King()
+
+    let obj = {
+        name: "obj-name"
+    }
+
+    obj.f = King()
+
+    obj.f()
+  </script>
+</body>
+</html>

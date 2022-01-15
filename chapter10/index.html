@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var color = "window color"
+
+        function parent() {
+            var color = "parent color"
+
+            function child() {
+                console.log("child里", this.color)
+            }
+
+            child()
+
+            let c2 = () => {
+                console.log("c2:", this.color)
+            }
+
+            c2()
+        }
+
+        parent()
+    </script>
+</body>
+</html>

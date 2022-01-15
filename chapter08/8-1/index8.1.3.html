@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.1.3读取属性的特性</title>
+</head>
+<body>
+    <script>
+        // 读取属性的特性
+        let book = {}
+        Object.defineProperties(book, {
+            // 数据属性
+            year_: {
+                value: 2017
+            },
+
+            // 数据属性
+            edition: {
+                value: 1
+            },
+
+            // 访问器属性
+            year: {
+                get() {
+                    return this.year_
+                },
+
+                set(newValue) {
+                    if (newValue > 2017) {
+                        this.year_ = newValue
+                        this.edition = newValue - 2017
+                    }
+                }
+            }
+        })
+
+        console.log("book1.edition:", book.edition.value)  // undefined
+        console.log("book1.edition:", book.edition)
+        console.log("book1.year", book.year)
+
+        console.log(typeof book)
+
+
+        let descriptor = Object.getOwnPropertyDescriptor(book, "year_")
+        console.log("descriptor.value: ", descriptor.value)
+
+        descriptor = Object.getOwnPropertyDescriptor(book, "year")
+        console.log("descriptor.value: ", descriptor.value)
+        console.log("typeof descriptor.get: ", typeof descriptor.get)
+
+        let a = new Array()
+        console.log(typeof a)  // object
+    </script>
+</body>
+</html>

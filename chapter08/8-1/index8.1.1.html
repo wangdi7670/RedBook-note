@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.1</title>
+</head>
+<body>
+    <script>
+        console.log('hello, world')
+
+        // 属性的类型
+        let book = {
+            name: '西游记'
+        }
+
+        Object.defineProperty(book, "name", {
+            writable: false  // 不可更改属性值
+        })
+
+        book.name = '红宝书'
+        console.log(book.name)
+
+
+
+    </script>
+</body>
+</html>
